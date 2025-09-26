@@ -399,7 +399,7 @@ function App() {
         
         <ExplanationContainer>
           <h3 style={{marginTop: 0}}>Process Explanation</h3>
-          <div dangerouslySetInnerHTML={{ __html: explanation.replace(/\n/g, '<br/>') }} />
+          <div dangerouslySetInnerHTML={{ __html: (explanation || '').replace(/\n/g, '<br/>') }} />
         </ExplanationContainer>
       </OutputPanel>
     </Container>
