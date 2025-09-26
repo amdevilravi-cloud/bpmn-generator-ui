@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import styled, { keyframes, css } from 'styled-components';
 import ProfessionalBpmnViewer from './components/ProfessionalBpmnViewer';
-
+import config from './config';  
 // Animation for simulation
 const pulse = keyframes`
   0% { transform: scale(1); }
@@ -198,7 +198,7 @@ function App() {
     
     setLoading(true);
     try {
-      const response = await axios.post('/generate-bpmn', {
+      const response = await axios.post(`${config.API_URL}/generate-bpmn`, {
         text: inputText
       });
       
